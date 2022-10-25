@@ -1,3 +1,3 @@
 const saludo = require("./saludo.js");
 
-console.log(saludar("freecodecamp"));
+console.log(saludo.saludar("freecodecamp"));
