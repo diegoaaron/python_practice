@@ -1,5 +1,7 @@
-const saludo = require('./saludos.js');
+// const saludo = require('./saludos.js');
 
-console.log(saludo.saludar('freecodecamp'));
+const { saludarHolamundo, saludar } = require('./saludos.js');
 
-console.log(saludo.saludarHolamundo());
+console.log(saludar('freecodecamp'));
+
+console.log(saludarHolamundo());
