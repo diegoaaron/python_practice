@@ -15,4 +15,21 @@ let infoCurso = {
     "esPublico": true
   }
 
-  console.log(infoCurso);
+console.log(infoCurso);
+
+// de objeto a cadena de caracteres
+let infoCursoJSON = JSON.stringify(infoCurso);
+
+console.log(infoCursoJSON);
+
+console.log(typeof infoCursoJSON);
+
+// de cadena de caracteres a objeto JS
+
+let infoCursoJS = JSON.parse(infoCursoJSON);
+
+console.log(infoCursoJS);
+
+console.log(typeof infoCursoJS);
+
+console.log(infoCursoJS.titulo);
