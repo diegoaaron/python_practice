@@ -1,4 +1,4 @@
-const promesaCumplida = true;
+const promesaCumplida = false;
 
 const miPromesa = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -10,6 +10,18 @@ const miPromesa = new Promise((resolve, reject) => {
     }, 3000);
 })
 
+const manejarPromesaCumplida = (valor) => {
+    console.log(valor);
+}
+
+const manejarPromesaRechazada = (razonRechazo) => {
+    console.log(razonRechazo);
+} 
+
+miPromesa.then(manejarPromesaCumplida,manejarPromesaRechazada);
+
+/*
 miPromesa.then((valor) => {
     console.log(valor);
 });
+ */
