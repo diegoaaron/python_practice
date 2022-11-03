@@ -25,4 +25,15 @@ const rechazarPedido = (mensajeDeError) => {
 miPedidoDePizza.then(manejarPedido,rechazarPedido);
 
 
+/*
+otra forma
+
+ miPedidoDePizza
+    .then((mensajeConfirmacion) => {
+        console.log(mensajeConfirmacion);
+    })
+    .then(null, (mensajeDeError) => {
+        console.log(mensajeDeError);
+    });
+*/
 
