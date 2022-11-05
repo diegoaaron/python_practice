@@ -1,6 +1,6 @@
 function ordenarProducto(producto) {
   return new Promise((resolve, reject) => {
-    console.log(`Ordenando: ${producto} de freecodeCampa`);
+    console.log(`Ordenando: ${producto} de freecodeCamp`);
     setTimeout(() => {
       if(producto === 'taza') {
         resolve('Ordenando una taza con el logo de freeCodeCamp...');
@@ -24,5 +24,15 @@ function procesarPedido(respuesta) {
 ordenarProducto('taza')
   .then(respuesta => {
     console.log('Respuesta recibida');
-    console.log(respuesta)
+    console.log(respuesta);
+    return procesarPedido(respuesta); // está función es asincrona y retorna una promesa
   })
+  .then(respuestaProcesada => {
+    console.log(respuestaProcesada);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
+
