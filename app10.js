@@ -7,7 +7,7 @@ function ordenarProducto(producto) {
       } else {
         reject('Este producto no esta disponible actualmente...');
       }
-    }, 3000);
+    }, 2000);
   });
 }
 
@@ -21,7 +21,8 @@ function procesarPedido(respuesta) {
   });
 }
 
-ordenarProducto('taza')
+/*
+ordenarProducto('lapiz')
   .then(respuesta => {
     console.log('Respuesta recibida');
     console.log(respuesta);
@@ -33,6 +34,18 @@ ordenarProducto('taza')
   .catch(error => {
     console.log(error);
   });
+*/
 
+async function realizarPedido(producto) {
+  try{
+    const respuesta = await ordenarProducto(producto);
+    console.log('Respuesta recibida');
+    console.log(respuesta);
+    const respuestaProcesada = await procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch(error) {
+    console.log(error);
+  }
+}
 
-
+realizarPedido('taza');
