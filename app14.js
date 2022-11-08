@@ -11,6 +11,8 @@ const servidor = http.createServer((req, res) => {
             return manejarSolicitudGET(req, res);
         case 'POST':
             return manejarSolicitudPOST(req, res);
+        case 'DELETE':
+            return manejarSolicitudDELETE(req, res);
         default:
             console.log(`El metodo utilizado no puede ser manejado por el servido: ${method}`);
     }
@@ -40,6 +42,15 @@ function manejarSolicitudPOST(req, res) {
     if (path === '/cursos/programacion') {
         res.statusCode = 200;
         return res.end('El servidor recibio una solicitud POST para /cursos/programacion');
+    }
+}
+
+function manejarSolicitudDELETE(req, res) {
+    const path = req.url;
+
+    if (path === '/cursos/programacion') {
+        res.statusCode = 200;
+        return res.end('El servidor recbio una solicitud DELETE para /cursos/programacion');
     }
 }
 
