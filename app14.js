@@ -14,21 +14,21 @@ const servidor = http.createServer((req, res) => {
         case 'DELETE':
             return manejarSolicitudDELETE(req, res);
         default:
-            console.log(`El metodo utilizado no puede ser manejado por el servido: ${method}`);
+            res.statusCode = 501;
+            return res.end(`El metodo utilizado no puede ser manejado por el servido: ${method}`);
     }
 });
 
 function manejarSolicitudGET(req, res) {
     const path = req.url;
 
+    console.log(res.statusCode); // 200 siempre esta por defecto
+
     if(path === '/') {
-        res.statusCode = 200;
         return res.end('Bienvenido a mi primer servidor y API creado con Nodejs');
-    } else if (path === '/cursos') {
-        res.statusCode = 200;
+    } else if (path === '/api/cursos') {
         return res.end(JSON.stringify(cursos.infoCursos));
-    } else if (path == '/cursos/programacion') {
-        res.statusCode = 200;
+    } else if (path == '/api/cursos/programacion') {
         return res.end(JSON.stringify(cursos.infoCursos.programacion));
     }
 
@@ -39,8 +39,7 @@ function manejarSolicitudGET(req, res) {
 function manejarSolicitudPOST(req, res) {
     const path = req.url;
 
-    if (path === '/cursos/programacion') {
-        res.statusCode = 200;
+    if (path === '/api/cursos/programacion') {
         return res.end('El servidor recibio una solicitud POST para /cursos/programacion');
     }
 }
@@ -48,8 +47,7 @@ function manejarSolicitudPOST(req, res) {
 function manejarSolicitudDELETE(req, res) {
     const path = req.url;
 
-    if (path === '/cursos/programacion') {
-        res.statusCode = 200;
+    if (path === '/api/cursos/programacion') {
         return res.end('El servidor recbio una solicitud DELETE para /cursos/programacion');
     }
 }
