@@ -14,6 +14,7 @@ const servidor = http.createServer((req, res) => {
         case 'DELETE':
             return manejarSolicitudDELETE(req, res);
         default:
+            
             res.statusCode = 501;
             return res.end(`El metodo utilizado no puede ser manejado por el servido: ${method}`);
     }
@@ -33,6 +34,7 @@ function manejarSolicitudGET(req, res) {
     }
 
     res.statusCode = 404;
+
     return res.end('El recurso solicitado, no existe...');
 }
 
