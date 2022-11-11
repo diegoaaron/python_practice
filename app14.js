@@ -34,7 +34,6 @@ function manejarSolicitudGET(req, res) {
     }
 
     res.statusCode = 404;
-    
     return res.end('El recurso solicitado, no existe...');
 }
 
