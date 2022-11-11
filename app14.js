@@ -39,8 +39,30 @@ function manejarSolicitudGET(req, res) {
 function manejarSolicitudPOST(req, res) {
     const path = req.url;
 
+    console.log(path);
+
     if (path === '/api/cursos/programacion') {
-        return res.end('El servidor recibio una solicitud POST para /cursos/programacion');
+        console.log('ingrese....');
+
+        let cuerpo = '';
+
+        req.on('data', contenido => {
+            cuerpo += contenido.toString();
+        });
+
+        req.on('end', () => {
+            console.log(cuerpo);
+            console.log(typeof cuerpo);
+
+            cuerpo = JSON.parse(cuerpo);
+
+            return res.end('El servidor recibio una solicitud POST para /cursos/programacion');
+        });
+
+        // return res.end('El servidor recibio una solicitud POST para /cursos/programacion');
+    } else {
+        res.statusCode = 404;
+        return res.end('El recurso solicitado, no existe...');
     }
 }
 
