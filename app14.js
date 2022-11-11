@@ -39,10 +39,7 @@ function manejarSolicitudGET(req, res) {
 function manejarSolicitudPOST(req, res) {
     const path = req.url;
 
-    console.log(path);
-
     if (path === '/api/cursos/programacion') {
-        console.log('ingrese....');
 
         let cuerpo = '';
 
@@ -55,6 +52,9 @@ function manejarSolicitudPOST(req, res) {
             console.log(typeof cuerpo);
 
             cuerpo = JSON.parse(cuerpo);
+
+            console.log(typeof cuerpo);
+            console.log(cuerpo.titulo);
 
             return res.end('El servidor recibio una solicitud POST para /cursos/programacion');
         });
