@@ -23,9 +23,8 @@ const servidor = http.createServer((req, res) => {
 function manejarSolicitudGET(req, res) {
     const path = req.url;
 
-    console.log(res.statusCode); // 200 siempre esta por defecto
-
     if(path === '/') {
+        res.writeHead(200,{'Content-Type': 'application/json'});
         return res.end('Bienvenido a mi primer servidor y API creado con Nodejs');
     } else if (path === '/api/cursos') {
         return res.end(JSON.stringify(cursos.infoCursos));
