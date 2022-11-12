@@ -50,7 +50,21 @@ app.get('/api/cursos/matematicas/:tema', (req, res) => {
     }
 
     res.send(JSON.stringify(resultados));
-})
+});
+
+app.get('/api/cursos/programacion/:lenguaje/:nivel', (req, res) => {
+    const lenguaje = req.params.lenguaje;
+    const nivel = req.params.nivel;
+
+    const resultados = infoCursos.programacion.filter(curso => curso.lenguaje === lenguaje && curso.nivel === nivel);
+
+    if (resultados === 0) {
+        return res.status(404).send(`No se encontro el curso ${lenguaje} de nivel ${nivel}`);
+    }
+
+    res.send(JSON.stringify(resultados));
+
+});
 
 // puerto 
 const PUERTO = process.env.PORT || 3000;
