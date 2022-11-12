@@ -1,7 +1,7 @@
-// const saludo = require('./saludos.js');
+const express = require('express');
 
-const { saludarHolamundo, saludar } = require('./saludos.js');
+const app = express();
 
-console.log(saludar('freecodecamp'));
+const {infoCursos} = require('./cursos.js'); // obteniendo los archivos con sintaxis de desestructuracion
 
-console.log(saludarHolamundo());
+
