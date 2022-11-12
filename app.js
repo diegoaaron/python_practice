@@ -24,6 +24,34 @@ app.get('/api/cursos/matematicas', (req,res) => {
     res.send(JSON.stringify(infoCursos.matematicas));
 });
 
+// ruta con parametro PROGRAMACION
+
+app.get('/api/cursos/programacion/:lenguaje', (req, res) => {
+    const lenguaje = req.params.lenguaje;
+
+    const resultados = infoCursos.programacion.filter(curso => curso.lenguaje === lenguaje);
+
+    if (resultados.length === 0) {
+        return res.status(404).send(`No se encontro cursos de ${lenguaje}`);
+    }
+
+    res.send(JSON.stringify(resultados));
+});
+
+// ruta con parametro MATEMATICAS
+
+app.get('/api/cursos/matematicas/:tema', (req, res) => {
+    const tema = req.params.tema;
+
+    const resultados = infoCursos.matematicas.filter(curso => curso.tema === tema);
+
+    if (resultados.length === 0) {
+        return res.status(404).send(`No se encontro curso de ${lenguaje}`);
+    }
+
+    res.send(JSON.stringify(resultados));
+})
+
 // puerto 
 const PUERTO = process.env.PORT || 3000;
 
