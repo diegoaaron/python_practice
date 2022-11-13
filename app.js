@@ -7,6 +7,14 @@ const {infoCursos} = require('./cursos.js'); // obteniendo los archivos con sint
 
 // Routing
 
+const routerProgramacion = express.Router();
+app.use('/api/cursos/programacion', routerProgramacion);
+
+const routerMatematicas = express.Router();
+app.use('/api/cursos/matematicas', routerMatematicas);
+
+
+
 app.get('/', (req, res) => {
     res.send('Mi primer servidor con express. Cursos');
 });
@@ -16,17 +24,17 @@ app.get('/api/cursos', (req, res) => {
     res.send(JSON.stringify(infoCursos)); // formato JSON
 });
 
-app.get('/api/cursos/programacion', (req, res) => {
+routerProgramacion.get('/', (req, res) => {
     res.send(JSON.stringify(infoCursos.programacion));
 });
 
-app.get('/api/cursos/matematicas', (req,res) => {
+routerMatematicas.get('/', (req,res) => {
     res.send(JSON.stringify(infoCursos.matematicas));
 });
 
 // ruta con parametro PROGRAMACION
 
-app.get('/api/cursos/programacion/:lenguaje', (req, res) => {
+routerProgramacion.get('/:lenguaje', (req, res) => {
     const lenguaje = req.params.lenguaje;
 
     const resultados = infoCursos.programacion.filter(curso => curso.lenguaje === lenguaje);
@@ -44,7 +52,7 @@ app.get('/api/cursos/programacion/:lenguaje', (req, res) => {
 
 // ruta con parametro MATEMATICAS
 
-app.get('/api/cursos/matematicas/:tema', (req, res) => {
+routerMatematicas.get('/:tema', (req, res) => {
     const tema = req.params.tema;
 
     const resultados = infoCursos.matematicas.filter(curso => curso.tema === tema);
@@ -56,7 +64,7 @@ app.get('/api/cursos/matematicas/:tema', (req, res) => {
     res.send(JSON.stringify(resultados));
 });
 
-app.get('/api/cursos/programacion/:lenguaje/:nivel', (req, res) => {
+routerProgramacion.get('/:lenguaje/:nivel', (req, res) => {
     const lenguaje = req.params.lenguaje;
     const nivel = req.params.nivel;
 
