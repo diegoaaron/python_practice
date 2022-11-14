@@ -34,3 +34,12 @@ for(let i = 0; i< otrosNombres.length; i++) {
     console.log(otrosNombres[i]);
 }
 
+function showUserInfo(username, userage) {
+    return `el usuario tiene ${username} con ${userage}`;
+}
+
+console.log(showUserInfo('diego',31));
+
+const haber = (username, userage) => `el usuario tiene ${username} con ${userage}`;
+
+console.log(haber('liz',22));
