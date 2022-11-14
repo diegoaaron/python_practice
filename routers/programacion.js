@@ -4,6 +4,9 @@ const routerProgramacion = express.Router();
 
 const {programacion} = require('../datos/cursos.js').infoCursos;
 
+// Middleware
+routerProgramacion.use(express.json());
+
 // ruta con parametro programacion
 
 routerProgramacion.get('/', (req, res) => {
@@ -38,6 +41,14 @@ routerProgramacion.get('/:lenguaje/:nivel', (req, res) => {
 
     res.send(JSON.stringify(resultados));
 
+});
+
+routerProgramacion.post('/',(req, res) => {
+    let cursoNuevo = req.body;
+
+    programacion.push(cursoNuevo);
+
+    res.send(JSON.stringify(programacion));
 });
 
 module.exports = routerProgramacion;
