@@ -7,10 +7,10 @@ const {infoCursos} = require('./datos/cursos.js'); // obteniendo los archivos co
 
 // Routing
 
-
+const routerProgramacion = require('./routers/programacion.js');
 app.use('/api/cursos/programacion', routerProgramacion);
 
-
+const routerMatematicas = require('./routers/matematicas.js');
 app.use('/api/cursos/matematicas', routerMatematicas);
 
 

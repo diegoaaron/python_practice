@@ -2,7 +2,7 @@ const express = require('express');
 
 const routerProgramacion = express.Router();
 
-const {programacion} = require('../datos/cursos.js');
+const {programacion} = require('../datos/cursos.js').infoCursos;
 
 // ruta con parametro programacion
 
@@ -39,3 +39,6 @@ routerProgramacion.get('/:lenguaje/:nivel', (req, res) => {
     res.send(JSON.stringify(resultados));
 
 });
+
+module.exports = routerProgramacion;
+
