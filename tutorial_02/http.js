@@ -1,6 +1,6 @@
 const http = require('http');
 
-http.createServer((request, response) => {
+const server = http.createServer((request, response) => {
 
     console.log(request.url);
 
@@ -20,7 +20,9 @@ http.createServer((request, response) => {
     response.end();
 
     
-}).listen(3000);
+});
+
+server.listen(3000);
 
 console.log('servidor en el puerto 3000');
 
