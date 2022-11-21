@@ -4,7 +4,8 @@
   "description": "segundo tutorial de node",
   "main": "index.js",
   "scripts": {
-    "ejecutar": "node app.js # esta es una aplicacion de node"
+    "start": "node src/app.js",
+    "dev": "node src/app.js"
   },
   "author": "diego",
   "license": "ISC",
