@@ -13,6 +13,8 @@ const getText = (pathFile) => {
 
 getText('./data/first.txt')
     .then((result) => console.log(result))
+    .then(() => getText('./data/second.txt'))
+    .then(result => console.log(result))
     .catch((error) => console.log(error))
 
  
