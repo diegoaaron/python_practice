@@ -4,7 +4,7 @@
   "description": "segundo tutorial de node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ejecutar": "node app.js # esta es una aplicacion de node"
   },
   "author": "diego",
   "license": "ISC",
