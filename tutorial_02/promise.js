@@ -11,10 +11,26 @@ const getText = (pathFile) => {
     });
 }
 
+/*
 getText('./data/first.txt')
     .then((result) => console.log(result))
     .then(() => getText('./data/second.txt'))
     .then(result => console.log(result))
     .catch((error) => console.log(error))
+*/
 
- 
+// para indicar que el codigo es asincrono indicamos "await" pero permite escribir y manejarlo como si fuera sincrono. 
+
+async function read() {
+try {
+    const result = await getText('./data/first.txt');
+    const result2 = await getText('./data/second.txt');
+    console.log(result);
+    console.log(result2);
+} catch(e) {
+    console.log(e);
+}
+}
+
+
+ read();
