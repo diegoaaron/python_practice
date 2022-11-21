@@ -1,6 +1,8 @@
-console.log("hello world!");
+const colors = require('colors');
 
-console.log("fast web");
+console.log("hello world!".green);
 
-console.log("google.com");
+console.log("fast web".underline.red);
+
+console.log("google.com".rainbow);
 
