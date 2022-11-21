@@ -27,6 +27,7 @@ try {
     const result2 = await getText('./data/second.txt');
     console.log(result);
     console.log(result2);
+    throw new Error('esto es un error no esperado');
 } catch(e) {
     console.log(e);
 }
