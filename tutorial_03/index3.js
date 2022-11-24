@@ -30,5 +30,12 @@ app.get("/user", (req, res) => {
   });
 });
 
+// manipulando el codigo de respuesta
+
+app.get("/isalive", (req, res) => {
+    res.sendStatus(204);
+  });
+  
+
 app.listen(3000);
 console.log(`server en puerto ${3000}`);
