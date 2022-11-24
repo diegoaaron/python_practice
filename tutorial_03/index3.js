@@ -1,35 +1,34 @@
-const express =require('express');
+const express = require("express");
 
 const app = express();
 
 // respondiendo un mensaje
 
-app.get('/',(req, res) => {
-    res.send('hola mundo');
+app.get("/", (req, res) => {
+  res.send("hola mundo");
 });
 
 // respondiendo un archivo
-app.get('/miarchivo',(req, res) => {
-    res.sendFile('./javascript.png', {
-        root: __dirname
-    });
+app.get("/miarchivo", (req, res) => {
+  res.sendFile("./javascript.png", {
+    root: __dirname,
+  });
 });
 
 // respondiendo un json
 
-app.get('/user',(req, res) => {
-    res.json({
-        "name": "fazt",
-        "lastname": "ray",
-        age: 40,
-        points: [1,2,3],
-        address: {
-            city: "new york",
-            street: "some street 123"
-        }
-    });
+app.get("/user", (req, res) => {
+  res.json({
+    name: "fazt",
+    lastname: "ray",
+    age: 40,
+    points: [1, 2, 3],
+    address: {
+      city: "new york",
+      street: "some street 123",
+    },
+  });
 });
 
 app.listen(3000);
 console.log(`server en puerto ${3000}`);
-
