@@ -31,6 +31,5 @@ app.get('/name/:nombre/age/:age', (req,res) => {
 });
 
 
-
 app.listen(3000);
 console.log('servidor en puerto 3000');
