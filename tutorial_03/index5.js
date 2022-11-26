@@ -4,6 +4,7 @@ const app = express();
 
 app.get('/hello/:user', (req, res) => {
     console.log(req.params);
+    console.log(typeof req.params.user);
     res.send(`hello ${req.params.user}`);
 });
 
