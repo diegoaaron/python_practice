@@ -9,3 +9,4 @@ app.post('/user', (req,res) => {
 
 app.listen(3000);
 console.log(`server en puerto ${3000}`);
+
