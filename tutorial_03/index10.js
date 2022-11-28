@@ -3,9 +3,16 @@ const path = require('path');
 
 const app = express();
 
-//settings
+//routes
+const HomeRoutes = require('./src/router/home');
+const UserRoutes = require('./src/router/user');
+
+//middleware
 app.use("/public",express.static(path.join(__dirname,'public')))
 app.use("/uploads",express.static(path.join(__dirname,'uploads')))
+
+app.use(HomeRoutes);
+app.use(UserRoutes);
 
 // GET
 app.get("/profile", (req, res) => {
