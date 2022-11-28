@@ -9,10 +9,19 @@ let products = [{
     "price": 3000
 }];
 
+// settings
+app.set('appName', 'Express course');
+app.set('port', 3000);
+app.set('case sensitive routing', true)
+
 //midleware
 app.use(morgan('dev'));
 app.use(express.json());
 
+
+app.get('/CaseSensitive', (req,res) => {
+    res.send('probando el case sensitive');
+});
 
 // GET 
 app.get('/products', (req,res) => {
@@ -75,5 +84,5 @@ app.get('/products/:id', (req,res) => {
     res.json(productFound);
 });
 
-app.listen(3000);
-console.log('escuchando en 3000');
+app.listen(app.get('port'));
+console.log(`escuchando la app ${app.get('appName')} en puerto ${app.get('port')}`);
