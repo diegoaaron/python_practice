@@ -3,14 +3,27 @@ const morgan = require('morgan');
 
 const app = express();
 
-app.use(morgan('dev'));
+const products = [{
+    "id": 1,
+    "name": "laptop",
+    "price": 3000
+}];
 
+//midleware
+app.use(morgan('dev'));
+app.use(express.json());
+
+
+// GET 
 app.get('/products', (req,res) => {
-    res.send('obteniendo productos');
+    res.json(products);
 });
 
+// POST
 app.post('/products', (req,res) => {
-    res.send('creando productos');
+    const newProduct = {id: products.length + 1,...req.body};
+    products.push(newProduct);
+    res.send(newProduct);
 });
 
 app.put('/products', (req,res) => {
@@ -21,8 +34,18 @@ app.delete('/products', (req,res) => {
     res.send('eliminando productos');
 });
 
+// GET ID
 app.get('/products/:id', (req,res) => {
-    res.send('obteniendo un producto');
+    console.log(req.params.id);
+    const productFound = products.find((product) => {
+        return product.id === parseInt(req.params.id);
+    });
+
+    if (!productFound) return res.status(404).json({
+        message: "Producto no encontrado"
+    });
+
+    res.json(productFound);
 });
 
 app.listen(3000);
