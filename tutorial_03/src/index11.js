@@ -1,7 +1,10 @@
 const express = require("express");
 const path = require('path');
 const morgan = require('morgan');
+const connectDB1 = require('./db');
 require('ejs');
+
+connectDB1.connectDB();
 
 const app = express();
 
@@ -19,6 +22,8 @@ app.use("/uploads",express.static(path.join(__dirname,'uploads')))
 
 app.use(HomeRoutes);
 app.use(UserRoutes);
+
+
 
 // GET
 app.get("/profile", (req, res) => {
