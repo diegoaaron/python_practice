@@ -34,8 +34,10 @@ app.get('/dashboard', (req, res) => {
 
 app.get('/posts', async (req, res) => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    console.log(response);
-    res.render('posts');
+    
+    res.render('posts',{
+        posts: response.data,
+    });
 });
 
 //exportando router
