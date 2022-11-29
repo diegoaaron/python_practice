@@ -31,5 +31,9 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard');
 });
 
+app.get('/posts', (req, res) => {
+    res.render('posts');
+});
+
 //exportando router
 module.exports = app;
