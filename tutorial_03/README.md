@@ -6,6 +6,6 @@ Tutorial básico de Express
 
 ## Fuente
 
-Tutorial de de Fazt
+Tutorial de Fazt
 
 * [Express Framework de Nodejs, Curso para principiantes Javascript en el backend](https://youtu.be/JmJ1WUoUIK4)
