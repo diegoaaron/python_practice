@@ -4,8 +4,22 @@ const express = require('express');
 const app = express.Router();
 
 app.get('/', (req,res) => {
-    const title = 'Inicio';
-    res.render('index',{title});
+    let isActive = true;
+
+    const users = [
+        {
+            id: 1,
+            name: "ryan",
+            lastname: "perez"
+        },
+        {
+            id: 2,
+            name: "luis",
+            lastname: "aguilar"
+        }
+    ]
+
+    res.render('index',{title: 'Index page', isActive: isActive, users: users});
 });
 
 app.get('/about', (req,res) => {
