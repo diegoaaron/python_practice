@@ -1,13 +1,17 @@
 const express = require("express");
 const path = require('path');
 const morgan = require('morgan');
-const ejs = require('ejs');
+require('ejs');
 
 const app = express();
 
+//settings
+app.set('view engine', 'ejs')
+app.set('views',path.join(__dirname, 'views'));
+
 //routes
-const HomeRoutes = require('./src/router/home');
-const UserRoutes = require('./src/router/user');
+const HomeRoutes = require('./router/home');
+const UserRoutes = require('./router/user');
 
 //middleware
 app.use("/public",express.static(path.join(__dirname,'public')))
