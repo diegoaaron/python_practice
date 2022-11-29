@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 const express = require('express');
 
 //router
@@ -31,7 +32,9 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard');
 });
 
-app.get('/posts', (req, res) => {
+app.get('/posts', async (req, res) => {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    console.log(response);
     res.render('posts');
 });
 
