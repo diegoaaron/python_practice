@@ -1,8 +1,9 @@
 import express from 'express';
 
-
 import employeesRoutes from './routes/employees.routes.js';
 import indexRoutes from './routes/index.router.js';
+
+import './config.js';
 
 const app = express();
 
