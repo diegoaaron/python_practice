@@ -5,6 +5,12 @@ export const getEmployees = async (req,res) => {
     res.json(rows);
 }
 
+export const getEmployee = async (req,res) => {
+    const [rows] = await pool.query('SELECT * FROM employee where id = ?',[req.params.id]);
+    res.json(rows[0]);
+}
+
+
 export const createEmployees = async (req,res) => {
     const {name, salary} = req.body;
     const [rows] = await pool.query('INSERT INTO employee (name, salary) VALUES(?, ?)',[name, salary]);
