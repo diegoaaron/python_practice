@@ -19,7 +19,11 @@ app.get('/', (req, res) => {
     res.render('index', {titulo:'aplicacion de contactos', dato:'cualquier texto'});
 });
 
-
+app.get('/agregar/:nombre/:numero', (req, res) => {
+    let nombre = req.params.nombre;
+    let numero = req.params.numero;
+    console.log(nombre, numero);
+})
 
 // configuracion del peruto
 app.listen('8000', function() {
