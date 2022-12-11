@@ -1,4 +1,5 @@
 import express from 'express';
+import {conectar} from './src/mysql_conector.js';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.static('./css'))
 // get raiz
 app.get('/', (req, res) => {
     //res.send('aplicacion inidicada... todo va bien');
+    conectar();
     res.render('index', {titulo:'aplicacion de contactos', dato:'cualquier texto'});
 });
 
