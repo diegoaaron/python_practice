@@ -1,5 +1,6 @@
 // importar mysql
 import mysql from 'mysql';
+let todos;
 
 // crear la conexion
 const conector = mysql.createConnection({
@@ -24,17 +25,23 @@ const agregarContacto = (numero, nombre) => {
     })
 }
 
+
 const obtenerContactos = () => {
     const sql = 'SELECT * FROM agenda';
     conector.query(sql, function(err, result, filed){
-        if(err) throw err
-        //console.log(result);
-        return result;
-    });
-    
+        todos = result
+    })
+    return todos;
 }
 
-export {conectar, agregarContacto, obtenerContactos}
+const borrarContacto = id => {
+    const sql = `DELETE FROM agenda where id_agenda = ${id}`;
+    conector.query(sql, function(err, result, filed) {
+        console.log('item borrado');
+    })
+}
+
+export {borrarContacto, agregarContacto, obtenerContactos}
 
 /**
  * user: root
