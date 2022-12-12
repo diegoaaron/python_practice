@@ -1,5 +1,5 @@
 import express from 'express';
-import {conectar} from './src/mysql_conector.js';
+import {obtenerContactos, agregarContacto} from './src/mysql_conector.js';
 
 const app = express();
 
@@ -14,16 +14,23 @@ app.use(express.static('./css'))
 
 // get raiz
 app.get('/', (req, res) => {
-    //res.send('aplicacion inidicada... todo va bien');
-    conectar();
-    res.render('index', {titulo:'aplicacion de contactos', dato:'cualquier texto'});
+    let a = obtenerContactos();
+    console.log(a);
+    res.render('index', {titulo:'aplicacion de contactos'});
 });
 
 app.get('/agregar/:nombre/:numero', (req, res) => {
     let nombre = req.params.nombre;
     let numero = req.params.numero;
-    console.log(nombre, numero);
+    agregarContacto(numero,nombre);
+    res.redirect('/');
 })
+
+app.get('/borrar/:id', (req, res) => {
+    let id = req.params.id
+    console.log(id)
+    res.redirect('/');
+});
 
 // configuracion del peruto
 app.listen('8000', function() {
