@@ -32,4 +32,46 @@ sd = full_st.rstrip()
 
 print("1" + sd + "2")
 
-# PAG 30
+age = 23
+
+message2 = "feliz " + str(age) + " cumpleaños"
+
+print(message2)
+
+# import this
+
+
+bicicletas = ["a", "b", "c"]
+
+print(bicicletas[-1])
+
+
+print(bicicletas[0].title())
+
+bicicletas[0] = "d"
+
+print(bicicletas)
+
+bicicletas.append("f")
+
+print(bicicletas)
+
+bicicletas.insert(1, "x")
+
+print(bicicletas)
+
+del bicicletas[0]
+
+print(bicicletas)
+
+print(bicicletas.pop())
+
+final = bicicletas.pop()
+
+print("sale: " + final + " queda: " + str(bicicletas))
+
+xd = str(bicicletas)
+
+print(xd[0])
+
+# pag 44
