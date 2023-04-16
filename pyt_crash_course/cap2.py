@@ -74,4 +74,33 @@ xd = str(bicicletas)
 
 print(xd[0])
 
-# pag 44
+bicicletas = ['honda', 'yamaha', 'suzuki']
+
+first_owned = bicicletas.pop(-1)
+
+print("mi primera bicicleta fue:" + first_owned + " !")
+
+bicicletas.remove('honda')
+
+print(bicicletas)
+
+# Ejercicios
+
+invitados = ["Erenesto", "Carlos", "Eva"]
+
+print("Vienes a cenar " + invitados[0] + " es hoy a las 8 p.m.")
+print("Vienes a cenar " + invitados[1] + " es hoy a las 8 p.m.")
+print("Vienes a cenar " + invitados[2] + " es hoy a las 8 p.m.")
+
+print("")
+print("Lamentablemente " + invitados[1] + " no podra asistir")
+
+del invitados[1]
+
+invitados.insert(1,"Pamela")
+
+print("")
+print("Vienes a cenar " + invitados[1] + " es hoy a las 8 p.m.")
+
+print("")
+print(str(invitados))

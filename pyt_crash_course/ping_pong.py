@@ -1,5 +1,5 @@
 # Ping Pong con Python 3
-# Por Diego Aarón
+# By: Diego
 
 import turtle
 
