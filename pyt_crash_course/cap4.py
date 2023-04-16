@@ -52,3 +52,52 @@ print(players[-3:])
 for n in players[2:]:
     print(n.title())
 
+# copiando una lista (se utilza slicing)
+
+my_foods = ['pizza', 'falafel', 'carrot cake']
+
+friend_foods = my_foods[:]
+
+my_foods.append("ceviche")
+friend_foods.append("caldo de gallina")
+
+print(my_foods)
+print(friend_foods)
+
+# si utilizamos "=" se enlace la nueva variable al espacio de memoria donde ya eta la lista
+# lo cual no genera una copia.
+
+mis_vocales = ["a","e","i"]
+las_vocales = mis_vocales;
+
+las_vocales.append("u")
+
+print(mis_vocales)
+print(las_vocales)
+
+print("-----------------Ejercicio 1-----------------")
+
+numeritos = [n**2 for n in range(1,200) if n%14 == 0]
+print(numeritos)
+
+print("los primeros 3 numeros de la lista son: " + str(numeritos[:3]))
+
+a1 = int(((len(numeritos))/2)-1)
+a2 = int(((len(numeritos))/2)+2)
+
+print("los 3 numeros del medio son: " + str(numeritos[a1:a2]))
+print("los 3 ultimos numeros son: " + str(numeritos[-3:]))
+
+print("-----------------Ejercicio 2-----------------")
+
+las_comidas = ['pizza', 'falafel', 'carrot cake']
+mis_comidas = las_comidas[:]
+
+las_comidas.append("langosta")
+mis_comidas.append("escaveche")
+
+print(las_comidas)
+print(mis_comidas)
+
+for comida, comida2 in las_comidas,mis_comidas:
+    print(comida + "-" + comida2)
