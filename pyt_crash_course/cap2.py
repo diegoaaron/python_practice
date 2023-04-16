@@ -102,5 +102,39 @@ invitados.insert(1,"Pamela")
 print("")
 print("Vienes a cenar " + invitados[1] + " es hoy a las 8 p.m.")
 
+invitados.insert(0,"Camilo")
+invitados.insert(2,"Pablo")
+invitados.append("Karla")
+
+invitado_retirado = invitados.pop()
+
+print("Lo siento " + invitado_retirado + " la cena se cancelo")
+
+invitado_retirado = invitados.pop()
+
+print("Lo siento " + invitado_retirado + " la cena se cancelo")
+
+invitado_retirado = invitados.pop()
+
+print("Lo siento " + invitado_retirado + " la cena se cancelo")
+
+invitado_retirado = invitados.pop()
+
+print("Lo siento " + invitado_retirado + " la cena se cancelo")
+
+del invitados[-1]
+del invitados[-1]
+
 print("")
 print(str(invitados))
+
+
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+
+cars.sort()
+
+print(cars)
+
+cars.sort(reverse=True)
+
+print(cars)
