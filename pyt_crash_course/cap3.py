@@ -138,3 +138,37 @@ print(cars)
 cars.sort(reverse=True)
 
 print(cars)
+
+print(sorted(cars))
+
+print("el tamaño de la lista es: " + str(len(cars)))
+print("------------------------")
+
+# Ejercicio
+
+lugares = ["belgica", "uk", "alemania", "finlandia", "rusia"]
+
+print(lugares)
+
+print("lista ordenada: " + str(sorted(lugares)))
+print("lista original: " + str(lugares))
+
+print("------------------------")
+print("lista ordenada: " + str(sorted(lugares, reverse=True)))
+print("lista original: " + str(lugares))
+
+print("------------------------")
+lugares.reverse()
+print("lista en reversa: " + str(lugares))
+
+print("------------------------")
+lugares.reverse()
+print("lista en reversa: " + str(lugares))
+
+print("------------------------")
+lugares.sort()
+print("lista en orden alfabetico: " + str(lugares))
+
+print("------------------------")
+lugares.sort(reverse=True)
+print("lista en orden alfabetico invertido: " + str(lugares))
