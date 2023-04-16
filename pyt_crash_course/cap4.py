@@ -99,5 +99,38 @@ mis_comidas.append("escaveche")
 print(las_comidas)
 print(mis_comidas)
 
-for comida, comida2 in las_comidas,mis_comidas:
-    print(comida + "-" + comida2)
+print("Mis comidas favortias son: ")
+
+for comida in mis_comidas:
+    print("* " + comida)
+
+print("La comida favorita de mis amigos son: ")
+
+for comida in las_comidas:
+    print("* " + comida)
+
+# tuplas
+
+dimensiones = (200,50)
+print(dimensiones[0])
+print(dimensiones[1])
+
+for x in dimensiones:
+    print(x)
+
+# se puede sobreescribir toda una tupla
+
+dimensiones = (222,333,444)
+print("\n imprimiendo toda una nueva tupla")
+for n in dimensiones:
+    print(n)
+
+comidas = ("arroz", "huevo", "fideos", "algas")
+
+for comida in comidas:
+    print("La comida es: " + comida)
+
+comidas = ("a", "b", "c")
+
+for x in comidas:
+    print("la comida es: " + x)
