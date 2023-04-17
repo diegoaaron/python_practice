@@ -46,3 +46,92 @@ favorite_languages = {
 print(favorite_languages)
 print("-------------------------------")
 
+# recorriendo un diccionario
+
+for key, value in favorite_languages.items():
+    print("clave: " + key + " - valor: " + value + "\n")
+
+print("-------------------------------")
+
+for name, language in favorite_languages.items():
+    print(name.title() + " tiene como lenguaje favorito: " + language.title())
+
+print("-------------------------------")
+
+# recorriendo solo las CLAVES o VALORES de un diccionario
+
+for key in favorite_languages.keys():
+    print("llave: " + key.title())
+
+print("-------------------------------")
+
+for value in favorite_languages.values():
+    print("value: " + value.title())
+
+print("-------------------------------")
+
+# nesting - consiste en poner diccionarios dentro de una lista
+
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
+
+aliens_list = [alien_0, alien_1, alien_2]
+print(aliens_list)
+print("-------------------------------")
+
+# Ejercicio
+
+new_aliens = []
+
+for aliens_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    new_aliens.append(new_alien)
+
+for alien in new_aliens[:5]:
+    print(alien)
+
+print("-------------------------------")
+
+print("total de aliens: " + str(len(new_aliens)))
+print("-------------------------------")
+
+# nesting de una lista en un diccionario
+
+pizza = {
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese']
+}
+
+print("Tu orden de " + pizza['crust'] + "-curst pizza tiene lo siguiente: ")
+for topping in pizza['toppings']:
+    print("\n" + topping)
+
+print("-------------------------------")
+
+# nesting de un diccionario en otro diccionario
+
+users = {
+'aeinstein': {
+'first': 'albert',
+'last': 'einstein',
+'location': 'princeton',
+},
+'mcurie': {
+'first': 'marie',
+'last': 'curie',
+'location': 'paris',
+}
+}
+
+for user_name, user_info in users.items():
+    print("\nUsername: " + user_name)
+
+    full_name = user_info['first'] + " " + user_info['last']
+    location = user_info['location']
+
+    print("\nfull name: " + full_name)
+    print("\nlocation: "  + location)
+
+print("-------------------------------")
+
