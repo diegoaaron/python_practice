@@ -43,3 +43,18 @@ while True:
     else:
         print("lo ingresado es: " + city)
 
+# Llenando un diccionario utilizando WHILE
+respuestas = {}
+polling_active = True
+
+while polling_active:
+    nombre = input("Ingrese el nombre: ")
+    apellido = input("\nAhora ingrese su apellido: ")
+    respuestas[nombre] = apellido
+
+    continuar = input("Desea seguir ingresando valores: SI/NO")
+    if continuar in ("no","NO","No","nO"):
+        polling_active = False
+    
+print("La lista final es: ")
+print(respuestas)
