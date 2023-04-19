@@ -107,3 +107,11 @@ print("Los modelos impresos fueron: ")
 print(resultado)
 
 
+# Un archivo .py es un modulo que puede agrupar un conjunto de funciones 
+# las cuales despues pueden ser llamadas desde otro archivo 
+
+from modulo_test import imprime_modulo
+from modulo_test import imprime_modulo2 as modulo2
+
+imprime_modulo()
+modulo2()
