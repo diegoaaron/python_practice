@@ -52,5 +52,58 @@ def get_nombre_formateado(first_name, last_name, middle_name=""):
 nombre_completo = get_nombre_formateado("jimi", "hendrix")
 print(nombre_completo)
 
+# VALORES ARBITRARIOS: se puede pasar a una funcion una cantidad invariables las cuales se asociaran
+# a una tupla. para esto ponemos un * adelante del nombre que se asignara al parametro. Este parametro
+# debe ir al final de la funcion, despues de cualquier VALOR POR DEFECTO
+
+def haciendo_pizz(size, *toppings):
+        print("\nHaciendo pizza de " + str(size) + "elementos")
+        
+        for topping in toppings:
+            print("- " + topping)
+        
+haciendo_pizz(16,"pepperoni")
+haciendo_pizz(16,'mushrooms', 'green peppers', 'extra cheese')
+
+# VALORES ARBITRARIOS CLAVE-VALOR: se puede pasar a una funcion una cantidad invariables las cuales se asociaran
+# a un diccionario. para esto ponemos un ** adelante del nombre que se asignara al parametro. Este parametro
+# debe ir al final de la funcion, despues de cualquiero VALOR ARBITRARIO y VALOR POR DEFECTO
+
+def build_profile(first, last, **userinfo):
+
+    profile = {}
+    profile['first_name'] =first
+    profile['last_name'] =last
+
+    for key, value in userinfo.items():
+        profile[key] = value
+
+    return profile
+
+user_profile = build_profile('albert', 'einstein', 
+                             location='princeton', field='physics')
+
+print(user_profile)
+
+
+# Ejercicios
+print("--------------------------------------------")
+
+modelo_sin_imprimir = ['iphone case', 'robot pendant', 'dodecahedron']
+modelo_impreso = []
+
+
+def simulador_impresion(elementos):
+    while(modelo_sin_imprimir):
+        current_design = modelo_sin_imprimir.pop()
+        print("Imprimiendo modelo: " + current_design)
+        modelo_impreso.append(current_design)
+    
+    return modelo_impreso
+
+resultado = simulador_impresion(modelo_sin_imprimir)
+
+print("Los modelos impresos fueron: ")
+print(resultado)
 
 
