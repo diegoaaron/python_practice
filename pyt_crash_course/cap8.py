@@ -112,6 +112,6 @@ print(resultado)
 
 from modulo_test import imprime_modulo
 from modulo_test import imprime_modulo2 as modulo2
-
+from modulo_test import *  
 imprime_modulo()
 modulo2()
