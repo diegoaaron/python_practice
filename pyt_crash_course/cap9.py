@@ -44,12 +44,23 @@ class Car():
 
     # funcion para actualizar una variable 
     def update_odometer(self, mileage):
-        self.odometer_reading = mileage
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("No puede reducir el odometro")
+
+    # funcion para imcrementar el odometro
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
+
+    def fill_gas_tank(self):
+        print("este carro tiene un tanque de 80L")
 
 
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
+my_new_car.fill_gas_tank()
 
 # se puede modificar direcatmente una variable o se puede definir una funcion en la clase
 my_new_car.odometer_reading = 44
@@ -58,4 +69,23 @@ my_new_car.read_odometer()
 # modificando utilizando una funcion
 my_new_car.update_odometer(55)
 my_new_car.read_odometer()
+
+# Herencia: Creando una clase hija
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery_size = 70 # agregando variabels propias en la clase hija
+
+    def describe_battery(self):
+        print("este carro tiene " + str(self.battery_size) + " KWh")
+
+    # modificando metodo heredado
+    def fill_gas_tank(self):
+        print("este carro no tiene tanque de gas")
+
+my_tesla = ElectricCar("tesla", "model s", 2017)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+my_tesla.fill_gas_tank()
 
