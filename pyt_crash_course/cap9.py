@@ -15,7 +15,7 @@ class Dog():
     def roll_over(self):
         print(self.name.title() + " rolled over!")
 
-#
+# creando instancias de la clase 
 
 animal = Dog("toffy", 4)
 
