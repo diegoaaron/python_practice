@@ -17,6 +17,9 @@ class Dog():
 
 # creando instancias de la clase 
 
-animal = Dog("toffy", 4)
+my_dog = Dog("toffy", 4)
+you_dog = Dog("lucy", 3)
 
-animal.sit()
+print("mi perro se llama " + my_dog.name.title() + ".")
+print("mi perro se tiene " + str(my_dog.age) + " años.")
+my_dog.sit()
