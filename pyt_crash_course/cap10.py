@@ -81,3 +81,20 @@ try:
 except FileNotFoundError:
     print("no se encontro el archivo...")
 
+
+# utlizando el modulo JSON para formatear la informacion
+
+print("--------------------------------------")
+import json
+
+numbers = [2,3,5,7,11,13]
+filename = "numbers.json"
+
+# escribiendo en un archivo
+with open(filename, "w") as f_obj:
+    json.dump(numbers, f_obj)
+
+# leyendo el archivo
+with open(filename) as f_obj:
+    numbers = json.load(f_obj)
+print(numbers)
