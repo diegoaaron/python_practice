@@ -8,6 +8,9 @@ def run_game():
     screen = pygame.display.set_mode((800,600))
     pygame.display.set_caption("Alien invasion")
 
+    # configurando color del lienzo
+    bg_color = (230, 230, 230)
+
     # Iniciamos el loop principal del juego
     while True:
 
@@ -16,6 +19,9 @@ def run_game():
             if event.type == pygame.QUIT:
                 sys.exit()
         
-        pygame.display.flip() # actualiza 
+        # reescribiendo el lienzo en cada pase del loop
+        screen.fill(bg_color)
+
+        pygame.display.flip() # actualiza el lienzo
 
 run_game()
