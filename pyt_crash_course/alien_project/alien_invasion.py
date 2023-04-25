@@ -16,6 +16,6 @@ def run_game():
             if event.type == pygame.QUIT:
                 sys.exit()
         
-        pygame.display.flip()
+        pygame.display.flip() # actualiza 
 
 run_game()
