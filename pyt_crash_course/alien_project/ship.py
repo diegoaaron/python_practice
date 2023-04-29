@@ -2,14 +2,18 @@ import pygame
 
 class Ship():
 
-    def __init__(self, screen):
+    def __init__(self,ai_settings , screen):
         """inicializando la nave y configurando su posicion"""
         self.screen = screen
+        self.ai_settings = ai_settings
 
         # cargando y configurando la imagen
         self.image = pygame.image.load("images/ship.bmp")
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
+
+        #definir valor decimal para nave central
+        self.center = float(self.rect.centerx)
 
         # etiqueta de movimiento continuo
         self.moving_right = False
