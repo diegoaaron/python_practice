@@ -13,6 +13,7 @@ class Ship():
 
         # etiqueta de movimiento continuo
         self.moving_right = False
+        self.moving_left = False
 
         # iniciando cada nave abaja y al centro del lienzo
         self.rect.centerx = self.screen_rect.centerx
@@ -22,6 +23,8 @@ class Ship():
         """Actualizando la posicion de la nave"""
         if self.moving_right:
             self.rect.centerx += 1
+        if self.moving_left:
+            self.rect.centerx -= 1
 
     def blitme(self):
         """Dibujando la nave en la posicion actual"""
