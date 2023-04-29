@@ -26,9 +26,12 @@ class Ship():
     def update(self):
         """Actualizando la posicion de la nave"""
         if self.moving_right:
-            self.rect.centerx += 1
+            self.center += self.ai_settings.ship_speed_factor
         if self.moving_left:
-            self.rect.centerx -= 1
+            self.center -= self.ai_settings.ship_speed_factor
+        
+        # actualiza la recta desde self.center
+        self.rect.centerx = self.center
 
     def blitme(self):
         """Dibujando la nave en la posicion actual"""
