@@ -14,7 +14,7 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Lanzar una bala dentro del limite"""
     # Creando una bala y agregandola al grupo de balas
-    if len(bullets) < ai_settings.bullets_alllowed:
+    if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
 
@@ -35,15 +35,7 @@ def check_events(ai_settings, screen, ship, bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
 
-def update_bullets(bullets):
-    """Actualiza la posicion de las balas y las depura"""
-    # Actualiza la posicion de las balas 
-    bullets.update()
 
-    # Obteniendo las balas a desaparecer
-    for bullet in bullets.copy():
-        if bullet.rect.bottom <= 0:
-            bullets.remove(bullet)
 
 def update_screen(ai_settings, screen, ship, bullets):
     """Actualiza imagen de la nave en la pantalla"""
@@ -58,3 +50,12 @@ def update_screen(ai_settings, screen, ship, bullets):
     pygame.display.flip()
 
 
+def update_bullets(bullets):
+    """Actualiza la posicion de las balas y las depura"""
+    # Actualiza la posicion de las balas 
+    bullets.update()
+
+    # Obteniendo las balas a desaparecer
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)

@@ -23,7 +23,7 @@ def run_game():
         #Esperando el evento de cierre
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.bullets.update(bullets)
+        gf.update_bullets(bullets)
         
         # reescribiendo el lienzo en cada pase del loop
         gf.update_screen(ai_settings, screen, ship, bullets)
