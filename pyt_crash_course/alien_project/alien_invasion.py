@@ -17,7 +17,9 @@ def run_game():
     ship = Ship(ai_settings, screen)
     # Grupo que almacena las balas
     bullets = Group()
-    alien = Alien(ai_settings, screen)
+    aliens = Group()
+
+    gf.create_fleet(ai_settings, screen, aliens)
 
     # Iniciamos el loop principal del juego
     while True:
@@ -28,6 +30,6 @@ def run_game():
         gf.update_bullets(bullets)
         
         # reescribiendo el lienzo en cada pase del loop
-        gf.update_screen(ai_settings, screen, ship, alien ,bullets)
+        gf.update_screen(ai_settings, screen, ship, aliens ,bullets)
 
 run_game()
