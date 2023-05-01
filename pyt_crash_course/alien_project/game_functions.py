@@ -120,6 +120,9 @@ def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     # Viendo las coliciones de una bala y un alien
     if pygame.sprite.spritecollideany(ship, aliens):
         ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+    
+    # Viendo si los aliens golpean la parte baja de la pantalla
+    check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets)
 
 def check_fleet_edges(ai_settings, aliens):
     """Responde apropieadamente si el alien alcanzo el borde"""
@@ -150,4 +153,12 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
     # Pausando
     sleep(0.5)
 
+def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
+    """Valida si un alien alcanzo la parte final de la pantalla"""
+    screen_rect = screen.get_rect()
+    for alien in aliens.sprites():
+        if alien.rect.bottom >= screen_rect.bottom:
+            # Tretar como si la nave fuera golpeada
+            ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+            break
     
