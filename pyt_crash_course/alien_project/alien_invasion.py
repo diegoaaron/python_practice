@@ -28,6 +28,7 @@ def run_game():
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         gf.update_bullets(bullets)
+        gf.update_aliens(ai_settings, aliens)
         
         # reescribiendo el lienzo en cada pase del loop
         gf.update_screen(ai_settings, screen, ship, aliens ,bullets)
