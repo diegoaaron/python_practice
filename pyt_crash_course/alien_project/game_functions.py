@@ -52,7 +52,7 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
     pygame.display.flip()
 
 
-def update_bullets(bullets):
+def update_bullets(aliens, bullets):
     """Actualiza la posicion de las balas y las depura"""
     # Actualiza la posicion de las balas 
     bullets.update()
@@ -61,6 +61,9 @@ def update_bullets(bullets):
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+
+    # Valida si una bala golpeo un alien
+    collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
 
 def get_number_aliens_x(ai_settings, alien_width):
     """Determinando el numero de aliens por fila"""
@@ -116,3 +119,4 @@ def change_fleet_direction(ai_settings, aliens):
     for alien in aliens.sprites():
         alien.rect.y += ai_settings.fleet_drop_speed
     ai_settings.fleet_direction *= -1
+
