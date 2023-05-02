@@ -46,6 +46,9 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
     """Inicia un nuevo juego al dar clic en play"""
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
+        # Reseteando configuracion del juego
+        ai_settings.initialize_dynamic_settings()
+
         # Ocultando el cursor
         pygame.mouse.set_visible(False)
 
@@ -62,7 +65,7 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
         ship.center_ship()
 
 
-def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button):
     """Actualiza imagen de la nave en la pantalla"""
     screen.fill(ai_settings.bg_color)
 
@@ -72,6 +75,9 @@ def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button
 
     ship.blitme()
     aliens.draw(screen)
+
+    # Dibujando la tabla de puntos
+    sb.show_score()
 
     # Dibujando el boton si el juego esta inactivo
     if not stats.game_active:
