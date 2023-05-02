@@ -33,7 +33,7 @@ def run_game():
     while True:
 
         #Esperando el evento de cierre
-        gf.check_events(ai_settings, screen, ship, bullets)
+        gf.check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
 
         if stats.game_active:
             ship.update()
