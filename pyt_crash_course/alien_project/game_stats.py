@@ -5,6 +5,8 @@ class GameStats():
         """Inicializando las estadísticas"""
         self.ai_settings = ai_settings
         self.reset_stats()
+        # maximo score
+        self.high_score = 0
         
         # Iniciando el juego con estado activo
         self.game_active = False
