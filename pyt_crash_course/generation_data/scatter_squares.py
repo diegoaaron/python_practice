@@ -12,4 +12,6 @@ plt.ylabel("Cuadrados", fontsize = 14)
 
 plt.tick_params(axis="both", which="major", labelsize = 14)
 
+plt.savefig('squares_plt.png', bbox_inches='tight')
+
 plt.show()
