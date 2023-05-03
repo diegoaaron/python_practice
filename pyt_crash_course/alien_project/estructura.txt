@@ -1,4 +1,5 @@
 primero implementamos el lienzo
 segundo implementamos la nave
+
 tercero implementamos las balas
 cuarto implementamos los aliens 
