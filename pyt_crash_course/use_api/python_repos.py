@@ -16,15 +16,20 @@ print("Total de repositorios: " + str(response_dict["total_count"]))
 # explorando información
 repo_dicts = response_dict["items"]
 
-names, stars = [], []
-print("Repositorios retornados: " + str(len(repo_dicts)))
+names, plot_dicts = [], []
 
 # examinando el primer repositorio
-print("Informacion del primer repositorio")
 
 for repo_dict in repo_dicts:
     names.append(repo_dict["name"])
-    stars.append(repo_dict["stargazers_count"])
+
+    plot_dict = {
+        'value': repo_dict["stargazers_count"],
+        'label': repo_dict["description"],
+        'xlink': repo_dict["html_url"]
+    }
+
+    plot_dicts.append(plot_dict)
 
     my_style = LS('#333366', base_style=LCS)
 
@@ -42,14 +47,7 @@ for repo_dict in repo_dicts:
     chart.title = "Proyecto en github mas votados"
     chart.x_labels = names
 
-    chart.add('', stars)
+    chart.add('', plot_dicts)
     chart.render_to_file('python_repos.svg')
 
-    print("nombre: " + repo_dict["name"])
-    print("propietario: " + repo_dict["owner"]["login"])
-    print("estrellas: " + str(repo_dict["stargazers_count"]))
-    print("repositorio: " + repo_dict["html_url"])
-    print("creacion: " + repo_dict["created_at"])
-    print("actualizacion: " + repo_dict["updated_at"])
-    print("descripcion: " + repo_dict["description"])
 
