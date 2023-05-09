@@ -12,6 +12,7 @@
     {% for entry in entries %}
     <li>
         <p>{{ entry.date_added|date:'M d, y H:i' }} - {{ entry.text }}</p>
+        <a href="{% url 'edit_entry' entry.id %}">edit entry</a>
     </li>
     {% empty %}
         <li>
