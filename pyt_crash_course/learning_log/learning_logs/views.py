@@ -54,4 +54,5 @@ def new_entry(request, topic_id):
             return HttpResponseRedirect(reverse('topic', args=[topic_id]))
     
     context = {'topic': topic, 'form': form}
+    
     return render(request, 'learning_logs/new_entry.html', context)
