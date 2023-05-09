@@ -56,10 +56,10 @@ def new_entry(request, topic_id):
     context = {'topic': topic, 'form': form} 
     return render(request, 'learning_logs/new_entry.html', context)
 
-def edit_entry(request, entri_id):
+def edit_entry(request, entry_id):
     """Edita una entrada existente"""
-    entry = Entry.objects.get(id = entri_id)
-    topic = entri_id.topic
+    entry = Entry.objects.get(id = entry_id)
+    topic = Topic.objects.get(text = entry.topic)
 
     if request.method != 'POST':
         # Inicializamos un formulario
@@ -72,4 +72,6 @@ def edit_entry(request, entri_id):
             return HttpResponseRedirect(reverse('topic', args=[topic.id]))
     
     context = {'entry': entry, 'topic': topic, 'form': form}
-    return render(request, 'edit_entry.html', context)
+    return render(request, 'learning_logs/edit_entry.html', context)
+
+

@@ -9,7 +9,7 @@
 <form action="{% url 'edit_entry' entry.id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button name="submit">add entry</button>
+    <button name="submit">save entry</button>
 </form>
 
 {% endblock content %}
