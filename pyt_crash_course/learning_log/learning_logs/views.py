@@ -37,7 +37,9 @@ def new_topic(request):
         # Post data submitted 
         form = TopicForm(request.POST)
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return HttpResponseRedirect(reverse('topics'))
         
     context = {'form': form}
@@ -68,6 +70,9 @@ def edit_entry(request, entry_id):
     """Edita una entrada existente"""
     entry = Entry.objects.get(id = entry_id)
     topic = Topic.objects.get(text = entry.topic)
+
+    if topic.owner != request.user:
+        raise Http404
 
     if request.method != 'POST':
         # Inicializamos un formulario
