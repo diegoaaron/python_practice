@@ -18,3 +18,13 @@ def descripcion_mascota(raza, nombre):
     print("Es de raza: " + raza)
 
 descripcion_mascota("pastor aleman", "toffy")
+
+# argumento keywoard: Es cuando un argumento es pasado en el formato "parametro=arugmento", haciendo irrelevante el orden en que se definieron los parametros al crear la funcion. 
+
+print("-----------------------1")
+
+def des_mascota(raza, nombre):
+    print("la mascota es " + nombre)
+    print("es de raza " + raza)
+
+des_mascota(nombre="toffina", raza="dogo")
