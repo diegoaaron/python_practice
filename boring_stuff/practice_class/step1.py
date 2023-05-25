@@ -27,5 +27,5 @@ def des_mascota(raza, nombre):
     print("la mascota es " + nombre)
     print("es de raza " + raza)
 
-
+des_mascota(nombre="toffina", raza="dogo")
 
