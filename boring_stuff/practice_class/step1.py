@@ -53,3 +53,33 @@ def descrip_mascota(nombre, raza="pequines"):
 
 descrip_mascota("toffy")
 descrip_mascota("toffy", "doberman")
+
+# return: palabra reservada que permite devolver un valor al finalizar una función
+
+print("-----------------------3")
+
+def get_nombre(first_name, last_name):
+    full_name = first_name + " " + last_name
+    return full_name
+
+l = get_nombre("luis", "rojas")
+
+print(l)
+
+def last_s(a, b=3):
+    total = a + b
+    return total
+
+x = last_s(5)
+print(x)
+
+# argunmentos pasados arbitrariamente: se pueden tener un parametro que acepte una cantidad invariable de argumentos, los cuales almacenara en una tupla. Para eso ponemos un * delante del nombre del parametro. Este parametro debe ir al final de la fucnión, despues de cualquier valor por defecto.
+
+print("-----------------------4")
+
+def haciendo_pizza(size, *toppings):
+    print("\n haciendo una pizza de " + str(size) + " elementos")
+    for topping in toppings:
+        print("- " + topping)
+
+haciendo_pizza(3, "a", "b", "c")
