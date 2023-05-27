@@ -83,3 +83,5 @@ def haciendo_pizza(size, *toppings):
         print("- " + topping)
 
 haciendo_pizza(3, "a", "b", "c")
+
+# argumentos pasados arbitrariamente en formato clave-valor: se puede 
