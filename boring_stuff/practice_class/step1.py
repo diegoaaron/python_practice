@@ -84,4 +84,7 @@ def haciendo_pizza(size, *toppings):
 
 haciendo_pizza(3, "a", "b", "c")
 
-# argumentos pasados arbitrariamente en formato clave-valor: se puede 
+# argumentos pasados arbitrariamente en formato clave-valor: se puede tener un parametro que acepte una cantidad 
+# invariable de argumentos en formato clave-valor, los cuales almacenara en un diccionario. Para esto ponemos ** 
+# delante del nombre del parametro. Este parametro debe ir al final de la función, despues de cualquier valor por
+# defecto o parametro para valores arbitrarios 
