@@ -187,4 +187,8 @@ while m > 0:
         print("numero: " + str(m))
     m -= 1
 
-    
+# TIPOS DE  DATOS
+
+# STRING 
+
+
