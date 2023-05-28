@@ -88,3 +88,45 @@ haciendo_pizza(3, "a", "b", "c")
 # invariable de argumentos en formato clave-valor, los cuales almacenara en un diccionario. Para esto ponemos ** 
 # delante del nombre del parametro. Este parametro debe ir al final de la función, despues de cualquier valor por
 # defecto o parametro para valores arbitrarios 
+
+print("-----------------------5")
+
+def build_profile(first, last, **userinfo):
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+
+    for key, value in userinfo.items():
+        profile[key] = value
+    
+    return profile
+
+user_profile = build_profile("albert", "einstein", location="princeton", field="fisica")
+
+print(user_profile)
+
+# Estructuras de control de flujo
+
+# IF/ELSE (estructura condicional)
+
+# if
+
+print("-----------------------6")
+
+auto = "Audi"
+
+if ("audi" == auto):
+    print("son iguales")
+else:
+    print("son diferentes")
+
+print("-----------------------7")
+
+# else if
+
+a = 12
+
+if a < 4:
+    print("numero menor a 4")
+elif a < 19:
+    print("numero entre 4 y 18")
