@@ -120,9 +120,9 @@ if ("audi" == auto):
 else:
     print("son diferentes")
 
-print("-----------------------7")
-
 # else if
+
+print("-----------------------7")
 
 a = 12
 
@@ -130,3 +130,18 @@ if a < 4:
     print("numero menor a 4")
 elif a < 19:
     print("numero entre 4 y 18")
+else:
+    print("numero mayor a 19")
+
+# if in
+
+print("----------------------8")
+
+banned_users = ["andrew", "carolina", "david"]
+usuario = "maire"
+
+if usuario in banned_users:
+    print("esta baneado")
+else:
+    print("puede ingresar")
+
