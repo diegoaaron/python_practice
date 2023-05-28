@@ -145,3 +145,22 @@ if usuario in banned_users:
 else:
     print("puede ingresar")
 
+# for
+
+print("----------------------9")
+
+cars = ["audi", "bmw", "subaru", "toyota"]
+
+for car in cars:
+    if (car == "bmw"):
+        print(car.upper())
+    else:
+        print(car.title())
+
+# for range
+
+print("---------------------10")
+
+for n in range(11):
+    print(n)
+
