@@ -164,3 +164,27 @@ print("---------------------10")
 for n in range(11):
     print(n)
 
+# while
+
+print("---------------------11")
+
+n = 10
+
+while n > 0:
+    print(n)
+    n -= 1
+
+# utilizando break
+
+print("---------------------12")
+
+m = 10
+
+while m > 0:
+    if m == 1:
+        break
+    else:
+        print("numero: " + str(m))
+    m -= 1
+
+    
