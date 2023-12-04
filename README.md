@@ -2,7 +2,7 @@
 
 ### 📝 Descripción
 
-Practicando teoria y ejercicios de scripts Python.
+Revision de teoria y ejercicios de scripts Python.
 
 ### ⚙️Fuente
 
